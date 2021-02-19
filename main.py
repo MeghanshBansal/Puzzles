@@ -2,7 +2,7 @@
 
 from collections import deque
 
-step = 0
+step = 1
 
 
 def show(a, b, c):
@@ -11,7 +11,7 @@ def show(a, b, c):
     stacks.append(a)
     stacks.append(b)
     stacks.append(c)
-    print(sorted(stacks, key=lambda x: x[0]))
+    print(str(step) + " - " + str(sorted(stacks, key=lambda x: x[0])))
     step = step + 1
 
 
@@ -33,6 +33,7 @@ if __name__ == '__main__':
         source.append(i)
     intermediate = deque(['B'])
     destination = deque('C')
-    print(source, intermediate, destination)
+    print("Initial: " + " - " + str(source), str(intermediate), str(destination))
     towerOfHanoi(n, source, intermediate, destination)
-    print("Number of steps =", step)
+    print()
+    print("Number of steps =", step - 1)
